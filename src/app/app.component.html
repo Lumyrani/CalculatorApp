@@ -1,0 +1,21 @@
+<div style="background-color:aqua;position: absolute;
+left:30%;height:30%;width:40%;height:400px">
+
+<div *ngIf ="(operator== '' && eq_opr != '=' )|| result==0">
+<input type ="text" value ={{value1}}>value1:{{value1}}<br>
+</div>
+<div *ngIf =" ( value1 !=''&& value2 !='')&& operator!= '' ">
+<input type ="text" value ={{value2}}>value2:{{value2}}<br>
+</div>
+
+
+<div *ngIf =" (eq_opr=='='&& operator!= '') && result!=0" >
+<input type="text"value={{result}}>Result:{{result}}<br>
+</div> 
+
+<button class ="btn btn-outline-info" *ngFor ="let num of ['0','1','2','3']"              (click)="setValue(num)">   {{num}}</button><br>
+<button class ="btn btn-outline-info" *ngFor ="let num of ['4','5','6','7']"              (click)="setValue(num)">   {{num}}</button><br>
+<button class ="btn btn-outline-info" *ngFor ="let num of ['8','9']"                      (click)="setValue(num)">   {{num}}</button><br>
+<button class ="btn btn-outline-info" *ngFor ="let opr of ['+','-','*','/','=']"    (click)="setOperator(opr)">{{opr}}</button> 
+<button class ="btn btn-outline-info" *ngFor ="let Clr of ['clr']"    (click)="setClear(Clr)">{{Clr}}</button>
+</div>
